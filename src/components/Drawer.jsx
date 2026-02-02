@@ -31,23 +31,33 @@ const Drawer = () => {
     {/*=====================================================================*/}
 
     <nav className="p-2">
-        <div className="space-y-1 border-b border-gray-200 pb-4">
-            <li>
-            <a
-                className="flex items-center gap-4 px-1 py-1 text-gray-700 rounded-lg group"
+        <div className="space-y-1 border-b border-gray-200">
+            <div className="text-md text-gray-600 flex items-center justify-between w-full py-2 pl-2 pr-6">
+            Admin Boundaries
+            <input 
+              type="checkbox"
+              checked={showAdminBoundaries}
+              onChange={(e) => setShowAdminBoundaries(e.target.checked)}
+            />
+            </div>
+            
+            {/* List of examples with smooth animations */}
+            <div 
+              className={`overflow-hidden transition-all duration-200 ease-in-out ${
+                showAdminBoundaries ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+              }`}
             >
-                <span className="text-md flex items-center justify-between w-full">
-                Admin Boundaries
-                <input 
-                  type="checkbox" 
-                  className="ml-2" 
-                  checked={showAdminBoundaries}
-                  onChange={(e) => setShowAdminBoundaries(e.target.checked)}
-                />
-                </span>
-                <span className="text-base font-medium"></span>
-            </a>
-            </li>
+              <div className="mt-2 pl-2 space-y-1 w-[60%] pb-2">
+                <div className="text-sm text-gray-600 flex justify-between items-center">
+                  <label className="font-sm">Labels</label>
+                  <input type="checkbox"/>
+                </div>
+                <div className="text-sm text-gray-600 flex justify-between items-center">
+                  <label className="font-sm">Colors</label>
+                  <input type="checkbox"/>
+                </div>
+              </div>
+            </div>
         </div>
     </nav>
 
