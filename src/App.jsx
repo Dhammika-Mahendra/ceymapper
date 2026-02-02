@@ -1,11 +1,13 @@
-import { useState } from 'react'
 import './App.css'
+import Map from './components/map'
+import Drawer from './components/Drawer'
 
 function App() {
 
   return (
-    <div>
-      Hellow
+    <div className='h-screen w-screen'>
+      <Drawer />
+      <Map />
     </div>
   )
 }
